@@ -1,0 +1,16 @@
+domains:
+  - url: 'https://raw.githubusercontent.com/ivolo/disposable-email-domains/master/index.json'
+    fileType: JSON
+    type: DISPOSABLE
+  - url: 'https://gist.githubusercontent.com/michenriksen/8710649/raw/e09ee253960ec1ff0add4f92b62616ebbe24ab87/disposable-email-provider-domains'
+    fileType: TEXT
+    type: DISPOSABLE
+  - url: 'https://gist.githubusercontent.com/adamloving/4401361/raw/e81212c3caecb54b87ced6392e0a0de2b6466287/temporary-email-address-domains'
+    fileType: TEXT
+    type: DISPOSABLE
+  - url: 'https://gist.githubusercontent.com/tbrianjones/5992856/raw/93213efb652749e226e69884d6c048e595c1280a/free_email_provider_domains.txt'
+    fileType: TEXT
+    type: FREE
+  - url: 'https://raw.githubusercontent.com/ivolo/disposable-email-domains/master/wildcard.json'
+    fileType: JSON
+    type: DISPOSABLE_WILDCARD
