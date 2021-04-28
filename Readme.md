@@ -8,16 +8,24 @@ Go library to verify, detect invalid, spam and junk email id.
 
 ## Usage
 
+```shell script
+go get github.com/deepakputhraya/mailcheck
+```
+
+## Example
+
 ```go
 package main
 
 import (
 	"fmt"
-	mailcheck "mailcheck/libs"
+	"github.com/deepakputhraya/mailcheck"
 )
 
+var emails = []string{"elon@tesla.com", "elon@gmail.com", "hello@mailinator.com"}
+
 func main() {
-	for _, email := range []string{"elonmusk@tesla.com", "invalid", "elon@gmail.com", "hello@mailinator.com"} {
+	for _, email := range emails {
 		// Skipped error handling
 		details, _ := mailcheck.GetEmailDetails(email)
 		fmt.Println(email)
@@ -29,5 +37,4 @@ func main() {
 		fmt.Println("-----")
 	}
 }
-
 ```
