@@ -4,7 +4,7 @@ Go library to verify, detect invalid, spam and junk email id.
 
 #### Features:
 - Identify disposable and free email providers
-- The API also automatically checks for role-based emails (such as sales@domain.com or team@domain.com),
+- The API also automatically checks for role-based emails (such as `sales@domain.com` or `team@domain.com`)
 
 ## Usage
 

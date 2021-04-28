@@ -1,4 +1,4 @@
-module mailcheck/libs
+module github.com/deepakputhraya/mailcheck
 
 go 1.15
 
