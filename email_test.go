@@ -1,6 +1,8 @@
-package libs
+package mailcheck
 
-import "testing"
+import (
+	"testing"
+)
 
 func shouldBeTrue(t *testing.T, value bool, msg string) {
 	if !value {

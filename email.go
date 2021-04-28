@@ -1,4 +1,4 @@
-package libs
+package mailcheck
 
 import (
 	"github.com/markbates/pkger"
@@ -48,25 +48,25 @@ func getCurrDirectory() string {
 func initialize() (err error) {
 	if len(disposableDomains) == 0 {
 		_ = pkger.Include("/../resources")
-		disposableDomains, err = readFile("../resources/disposable-email-providers.txt")
+		disposableDomains, err = readFile("/resources/disposable-email-providers.txt")
 		if err != nil {
 			return err
 		}
 	}
 	if len(wildcardDisposableDomains) == 0 {
-		wildcardDisposableDomains, err = readFile("../resources/wildcard-disposable-email-providers.txt")
+		wildcardDisposableDomains, err = readFile("/resources/wildcard-disposable-email-providers.txt")
 		if err != nil {
 			return err
 		}
 	}
 	if len(freeDomains) == 0 {
-		freeDomains, err = readFile("../resources/free-email-providers.txt")
+		freeDomains, err = readFile("/resources/free-email-providers.txt")
 		if err != nil {
 			return err
 		}
 	}
 	if len(roles) == 0 {
-		roles, err = readFile("../resources/roles.txt")
+		roles, err = readFile("/resources/roles.txt")
 		if err != nil {
 			return err
 		}
