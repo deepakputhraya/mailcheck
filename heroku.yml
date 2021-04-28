@@ -1,6 +1,5 @@
 build:
   docker:
     web: Dockerfile
-    worker: worker/Dockerfile
   config:
     GIN_MODE: release
