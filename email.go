@@ -47,7 +47,7 @@ func getCurrDirectory() string {
 
 func initialize() (err error) {
 	if len(disposableDomains) == 0 {
-		_ = pkger.Include("/../resources")
+		_ = pkger.Include("resources")
 		disposableDomains, err = readFile("/resources/disposable-email-providers.txt")
 		if err != nil {
 			return err
