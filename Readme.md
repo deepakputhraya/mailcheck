@@ -38,3 +38,9 @@ func main() {
 	}
 }
 ```
+
+## API
+The library can also be accessed through an API.
+```txt
+https://mailcheck-go.herokuapp.com/validate?email=elon@tesla.com
+```

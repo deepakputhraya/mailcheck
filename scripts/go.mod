@@ -1,4 +1,4 @@
-module scripts
+module mailcheck/scripts
 
 go 1.15
 

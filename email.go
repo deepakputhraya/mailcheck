@@ -4,9 +4,7 @@ import (
 	"github.com/markbates/pkger"
 	"github.com/thoas/go-funk"
 	"io/ioutil"
-	"path"
 	"regexp"
-	"runtime"
 	"strings"
 )
 
@@ -26,7 +24,11 @@ type EmailDetails struct {
 }
 
 func readFile(filename string) ([]string, error) {
-	content, err := ioutil.ReadFile(path.Join(getCurrDirectory(), filename))
+	file, err := pkger.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	content, err := ioutil.ReadAll(file)
 	if err != nil {
 		return nil, err
 	}
@@ -37,17 +39,15 @@ func readFile(filename string) ([]string, error) {
 	return items, nil
 }
 
-func getCurrDirectory() string {
-	_, filename, _, ok := runtime.Caller(0)
-	if !ok {
-		panic("Something went wrong!")
-	}
-	return path.Dir(filename)
-}
-
 func initialize() (err error) {
+	if !funk.Any(disposableDomains, wildcardDisposableDomains, freeDomains, roles) {
+		_, err := pkger.Stat("/resources")
+		if err != nil {
+			return err
+		}
+	}
+
 	if len(disposableDomains) == 0 {
-		_ = pkger.Include("/../resources")
 		disposableDomains, err = readFile("/resources/disposable-email-providers.txt")
 		if err != nil {
 			return err
