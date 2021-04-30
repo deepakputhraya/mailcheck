@@ -14,13 +14,13 @@ var wildcardDisposableDomains []string
 var disposableDomains []string
 
 type EmailDetails struct {
-	Email        string
-	Domain       string
-	IsValid      bool
-	IsDisposable bool
-	IsRoleBased  bool
-	IsFree       bool
-	Username     string
+	Email        string `json:"email"`
+	Domain       string `json:"domain"`
+	IsValid      bool   `json:"is_valid"`
+	IsDisposable bool   `json:"is_disposable"`
+	IsRoleBased  bool   `json:"is_role_based"`
+	IsFree       bool   `json:"is_free"`
+	Username     string `json:"username"`
 }
 
 func readFile(filename string) ([]string, error) {
